@@ -1,0 +1,29 @@
+GET http://localhost:3000/api/hello
+
+###
+POST http://localhost:3000/api/chats
+Content-Type: application/json
+
+{
+    "message": "React"
+}
+
+###
+GET http://localhost:3000/api/chats
+
+###
+@chatId = 09c0db38-b25e-4d5f-b3aa-df15eaa3b76f
+GET http://localhost:3000/api/chats/{{chatId}}/messages
+
+###
+POST http://localhost:3000/api/chats/{{chatId}}/messages
+Content-Type: application/json
+
+{
+    "message": "SOLID"
+}
+
+###
+@messageId = d56cf557-17b5-4a9f-ac58-1f0be4bccbe3
+GET http://localhost:3000/api/messages/{{messageId}}/events
+//Authorization: Bearer {{token}}
